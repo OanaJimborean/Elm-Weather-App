@@ -1,0 +1,61 @@
+-- TYPE MISMATCH -------- D:\AN3_SEMESTRUL1\FP_Lab\Assignment1\src\View\Week.elm
+
+The 1st argument to `view` is not what I expect:
+
+26|         h2[][View.Day.view (List.head weekly.dailyData)] 
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+This `head` call produces:
+
+    Maybe DailyData
+
+But `view` needs the 1st argument to be:
+
+    DailyData
+
+Hint: Use Maybe.withDefault to handle possible errors. Longer term, it is
+usually better to write out the full `case` though!
+
+-- TYPE MISMATCH -------- D:\AN3_SEMESTRUL1\FP_Lab\Assignment1\src\View\Week.elm
+
+The 1st argument to `view` is not what I expect:
+
+32|         h2[][View.Day.view (List.head (List.reverse weekly.dailyData))]
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+This `head` call produces:
+
+    Maybe DailyData
+
+But `view` needs the 1st argument to be:
+
+    DailyData
+
+Hint: Use Maybe.withDefault to handle possible errors. Longer term, it is
+usually better to write out the full `case` though!
+
+-- TYPE MISMATCH -------- D:\AN3_SEMESTRUL1\FP_Lab\Assignment1\src\View\Week.elm
+
+The 2nd argument to `map` is not what I expect:
+
+29|         p[] <| List.map View.Day.view List.reverse(List.tail(List.reverse weekly.dailyData))
+                                          ^^^^^^^^^^^^
+This `reverse` value is a:
+
+    List a -> List a
+
+But `map` needs the 2nd argument to be:
+
+    List DailyData
+
+Hint: I always figure out the argument types from left to right. If an argument
+is acceptable, I assume it is “correct” and move on. So the problem may actually
+be in one of the previous arguments!
+
+-- TOO MANY ARGS -------- D:\AN3_SEMESTRUL1\FP_Lab\Assignment1\src\View\Week.elm
+
+The `map` function expects 2 arguments, but it got 3 instead.
+
+29|         p[] <| List.map View.Day.view List.reverse(List.tail(List.reverse weekly.dailyData))
+                   ^^^^^^^^
+Are there any missing commas? Or missing parentheses?
+
+`elm make` failed with exit code 1.
